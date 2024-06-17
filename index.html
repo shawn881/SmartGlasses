@@ -13,16 +13,10 @@
     <link rel="apple-touch-icon" href="static/icon/images.png">
     <style>
         .btn-lg {
-            height: 20vh;
+            height: 15vh;
             font-weight: bold;
             font-size: 6vh;
             line-height: 1.2em; /* 減少行高 */
-        }
-
-        .btn-lg-2 {
-            height: 30vh;
-            font-weight: bold;
-            font-size: 4vh;
         }
 
         .front-6 {
@@ -48,7 +42,7 @@
         </div>
         <div class="d-grid gap-2 equal-width-btns">
             <button id="btn-auto" class="btn btn-warning outline btn-lg mb-3">
-                <div id="voice-toggle">手動<br>朗讀</div>
+                <div id="voice-toggle">手動朗讀</div>
             </button>
         </div>
         <div class="card text-bg-light">
@@ -58,9 +52,13 @@
                 <button id="btn-read" class="btn btn-primary">朗讀一次</button>
             </div>
         </div>
-        <div class="d-grid gap-2 mt-3">
-            <h2>影像串流</h2>
-            <img id="video" src="">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                    <h2>影像串流</h2>
+                    <img id="video" src="" class="img-fluid">
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

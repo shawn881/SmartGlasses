@@ -21,6 +21,16 @@ def send_message():
     latest_message = content['message']
     return '', 204
 
+@app.route('/manual_input', methods=['POST'])
+def manual_input():
+    message = request.json.get('message')
+    if message:
+        print(f"Received message from manual input: {message}")
+        global latest_message
+        latest_message = message
+        return '', 204
+    return 'Bad Request', 400
+
 def generate_frames():
     camera = cv2.VideoCapture(0)  # 使用第一個攝像頭
     while camera.isOpened():
@@ -38,4 +48,4 @@ def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8081)
+    app.run(host='0.0.0.0', port=8081, debug=True)
