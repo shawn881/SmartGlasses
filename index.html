@@ -2,7 +2,7 @@
 <html lang="zh" data-bs-theme="dark">
 
 <head>
-    <title>White Cane Connect APP</title>
+    <title>智能眼鏡APP</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
@@ -30,6 +30,11 @@
             text-align: center;
             font-weight: bold;
         }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -53,11 +58,18 @@
                 <button id="btn-read" class="btn btn-primary">朗讀一次</button>
             </div>
         </div>
+        <div class="d-grid gap-2 mt-3">
+            <h2>影像串流</h2>
+            <img id="video" src="">
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script src="static/script.js"></script>
+    <script>
+        document.getElementById('video').src = "http://" + window.location.hostname + ":8081/video_feed";
+    </script>
 </body>
 
 </html>
