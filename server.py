@@ -1,13 +1,13 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, send_from_directory
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 # 保存最新的消息
 latest_message = ""
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory('', 'index.html')
 
 @app.route('/message', methods=['GET'])
 def get_message():
